@@ -7,7 +7,7 @@ const escape = (rawHtml) => {
           return '&lt;'
         case '>':
           return '&gt;'
-        case '\"':
+        case '\'':
           return '&quot;'
         case '\'':
           return '&#39;'

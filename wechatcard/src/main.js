@@ -35,7 +35,7 @@ Vue.http.interceptors.push({
   response: function (response) {
     const status = response.status
     if (status !== 200) {
-      message = getErrorMessage(response.data.message)
+      const message = getErrorMessage(response.data.message)
       showToast(message)
     }
     return response

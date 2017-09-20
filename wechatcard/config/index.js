@@ -4,8 +4,11 @@ var path = require('path')
 module.exports = {
   build: {
     env: require('./prod.env'),
+    //This is where the index.html (with injected asset URLs) will be generated.
     index: path.resolve(__dirname, '../dist/index.html'),
+    //This should point to the root directory that contains all the static assets for your app.
     assetsRoot: path.resolve(__dirname, '../dist'),
+    //All assets will be generated in this path.
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     productionSourceMap: true,
@@ -23,11 +26,15 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8080,
+    port: 8080,//监听的是8080端口
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    //本地的 API 请求发送到这个服务器
+    proxyTable: {
+      target: 'http://www.hywmp.cn',
+      changeOrigin: true
+    },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)

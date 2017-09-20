@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { setDocumentTitle } from '../../utils/request'
+import { setDocTitle } from '../../utils/request'
 
 export default {
   data () {
@@ -14,7 +14,7 @@ export default {
     }
   },
   ready () {
-    setDocumentTitle('Page Hello')
+    setDocTitle('Page Hello')
   }
 }
 </script>

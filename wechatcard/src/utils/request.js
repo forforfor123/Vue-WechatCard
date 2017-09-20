@@ -1,6 +1,6 @@
-import { isSimpleObject, isJSON } from './string'
+import { isJSON } from './string'
 
-const setDocumentTitle = (title) => {
+const setDocTitle = (title) => {
   document.title = title
   const iframe = document.createElement('iframe')
 
@@ -50,9 +50,8 @@ const getErrorMessage = (respMessage) => {
   }
 }
 
-
 module.exports = {
-  setDocumentTitle: setDocumentTitle,
+  setDocTitle: setDocTitle,
   showToast: showToast,
   getErrorMessage: getErrorMessage
 }

@@ -2,10 +2,16 @@ require('./check-versions')()
 
 process.env.NODE_ENV = 'production'
 
+//命令行工具
 var ora = require('ora')
+
+//删除 npm 的模块插件
 var rm = require('rimraf')
-var path = require('path')
+
+//一个 npm 的控制台高亮模块
 var chalk = require('chalk')
+
+var path = require('path')
 var webpack = require('webpack')
 var config = require('../config')
 var webpackConfig = require('./webpack.prod.conf')

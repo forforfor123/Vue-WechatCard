@@ -3,13 +3,16 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 
+/**
+ * The target directory for all output files. Must be an absolute path (use the Node.js path module)
+ */
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './src/main.js' //APP入口文件
   },
   output: {
     path: config.build.assetsRoot,
