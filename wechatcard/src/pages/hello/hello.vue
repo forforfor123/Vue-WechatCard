@@ -10,7 +10,7 @@ import { setDocTitle } from '../../utils/request'
 export default {
   data () {
     return {
-      name: 'YangZheng',
+      name: 'YangZheng'
     }
   },
   ready () {

@@ -1,27 +1,3 @@
-const escape = (rawHtml) => {
-  if (rawHtml) {
-    let reg = /\<|\>|\"|\'|\&/g
-    rawHtml = rawHtml.replace(reg, (matchStr) => {
-      switch (matchStr) {
-        case '<':
-          return '&lt;'
-        case '>':
-          return '&gt;'
-        case '\'':
-          return '&quot;'
-        case '\'':
-          return '&#39;'
-        case '&':
-          return '&amp;'
-      }
-    })
-
-    rawHtml = rawHtml.replace(/\n/g, '<br>')
-  }
-
-  return rawHtml
-}
-
 const isSimpleObject = (obj) => {
   return Object.prototype.toString.apply(obj).slice(8, -1) === 'Object'
 }

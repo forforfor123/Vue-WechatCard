@@ -47,7 +47,7 @@ var devMiddleware = require('webpack-dev-middleware')(compiler, {
   quiet: true
 })
 
-// 启动 hot-reload，强制页面 reload 当 html-webpack-plugin 模板改变
+// 启动 hot-reload，当 html-webpack-plugin 模板改变强制页面 reload
 var hotMiddleware = require('webpack-hot-middleware')(compiler, {
   log: false,
   heartbeat: 2000
@@ -59,7 +59,6 @@ compiler.plugin('compilation', function (compilation) {
   })
 })
 
-// proxy api requests
 //将 proxyTable 的配置挂载到 express 服务上
 Object.keys(proxyTable).forEach(function (context) {
   var options = proxyTable[context]

@@ -4,7 +4,7 @@ import VueResource from 'vue-resource'
 import VueAsyncData from 'vue-async-data'
 import VueTap from 'vue-tap'
 import RouterConfig from './routers'
-import App from './App'
+import App from './App.vue'
 import { ajaxapiDomain } from './domain'
 import { showToast, getErrorMessage } from './utils/request'
 
