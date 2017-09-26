@@ -1,45 +1,15 @@
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import VueResource from 'vue-resource'
-import VueAsyncData from 'vue-async-data'
-import VueTap from 'vue-tap'
-import RouterConfig from './routers'
-import App from './App.vue'
-import { ajaxapiDomain } from './domain'
-import { showToast, getErrorMessage } from './utils/request'
+import App from './App'
+import router from './router'
 
-Vue.use(VueResource)
-Vue.use(VueRouter)
-Vue.use(VueAsyncData)
-Vue.use(VueTap)
+Vue.config.productionTip = false
 
-Vue.http.options.root = `${ajaxapiDomain}/api`
-Vue.http.options.xhr = { withCredentials: true }
-
-let router = new VueRouter({
-  hashbang: true,
-  history: false,
-  saveScrollPosition: false
-}).map(RouterConfig)
-
-router.beforeEach(function (transition) {
-  if (transition.to.path) {
-    transition.next()
-  }
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  template: '<App/>',
+  components: { App }
 })
-
-Vue.http.interceptors.push({
-  request: function (request) {
-    return request
-  },
-  response: function (response) {
-    const status = response.status
-    if (status !== 200) {
-      const message = getErrorMessage(response.data.message)
-      showToast(message)
-    }
-    return response
-  }
-})
-
-router.start(App, '#app')
