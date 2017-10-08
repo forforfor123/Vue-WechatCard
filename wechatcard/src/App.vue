@@ -6,6 +6,7 @@
 <style scoped>
 html {
   font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   height: 100%;
