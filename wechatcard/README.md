@@ -19,3 +19,18 @@ npm run build --report
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Relate Dependencies
+
+```
+"v-tap": "^3.0.2",
+"vue": "^2.4.2",
+"vue-async-data": "^1.0.2",
+"vue-i18n": "^7.3.0",
+"vue-resource": "^1.3.4",
+"vue-router": "^2.7.0"
+```
+
+## Build Of Tool
+
+Use Webpack2.0 and Sass/Less/Scss Loader and Vue-loader and babel-eslint and so on.

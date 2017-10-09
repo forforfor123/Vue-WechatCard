@@ -19,6 +19,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less">
+.myCard {
+  background-color: #DDDDDD;
 
+  h1 {
+    font-style: italic;
+  }
+}
 </style>

@@ -1,0 +1,47 @@
+.fl {
+  float: left !important;
+}
+
+.fr {
+  float: right !important;
+}
+
+.clearfix {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+.font-size(@size: 12px) {
+  font-size: @size;
+
+  [data-dpr="2"] & {
+    font-size: @size * 2;
+  }
+
+  [data-dpr="3"] & {
+    font-size: @size * 3;
+  }
+}
+
+.flex() {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex-item(@count) {
+  -webkit-box-flex: @count;
+  -webkit-flex: @count;
+  flex: @count;
+}

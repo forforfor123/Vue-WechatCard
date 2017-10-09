@@ -14,11 +14,17 @@ export default {
     }
   },
   mounted () {
-    console.log(this.$t('cardList.pageTitle'))
     document.title = this.$t('cardList.pageTitle')
   }
 }
 </script>
 
-<style scoped>
+<style lang="less">
+.cardList {
+  background-color: #DDDDDD;
+
+  h1 {
+    font-style: italic;
+  }
+}
 </style>

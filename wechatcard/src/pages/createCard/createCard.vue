@@ -1,6 +1,6 @@
 <template>
   <div class="createCard container">
-    <h1>{{ msg }}</h1>
+    <!-- <h1>{{ msg }}</h1> -->
     <btn type="solid" :text="$t('createCard.createCard')" :click-handler="saveCard"></btn>
   </div>
 </template>
@@ -16,13 +16,13 @@ export default {
       msg: 'Create Card'
     }
   },
+  mounted () {
+    // document.title = this.$t('createCard.pageTitle')
+  },
   methods: {
     saveCard () {
       console.log('Do action save card.')
     }
-  },
-  mounted () {
-    document.title = this.$t('createCard.pageTitle')
   },
   components: {
     Btn
@@ -30,5 +30,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less">
+.createCard {
+  background-color: #DDDDDD;
+
+  h1 {
+    font-style: italic;
+  }
+}
 </style>
