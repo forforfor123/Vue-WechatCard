@@ -6,7 +6,7 @@ function registerComponent (component) {
 
 const routers = [
   {
-    path: '/',
+    path: '/cardList',
     name: 'cardList',
     component: registerComponent('cardList')
   },
@@ -19,6 +19,11 @@ const routers = [
     path: '/createCard',
     name: 'createCard',
     component: registerComponent('createCard')
+  },
+  {
+    path: '/error',
+    name: 'error',
+    component: registerComponent('error')
   }
 ]
 

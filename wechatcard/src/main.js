@@ -6,7 +6,7 @@ import VueAsyncData from 'vue-async-data'
 import VueI18n from 'vue-i18n'
 import App from './App'
 import routerConfig from './routers'
-import requestUtilFunc from './utils/request'
+// import requestUtilFunc from './utils/request'
 import { zhMessage } from './langs/zh_cn'
 import { enMessage } from './langs/en_us'
 
@@ -34,7 +34,7 @@ let i18n = new VueI18n({
   }
 })
 
-Vue.http.options.root = 'http://www.hywmp.cn'
+Vue.http.options.root = 'http://www.hywmp.cn/api'
 Vue.http.options.xhr = { withCredentials: true }
 Vue.http.interceptors.push({
   request: function (request) {
@@ -43,8 +43,9 @@ Vue.http.interceptors.push({
   response: function (response) {
     const status = response.status
     if (status !== 200) {
-      let message = requestUtilFunc.getErrorMessage(response.data.message)
-      requestUtilFunc.showToast(message)
+      console.log(response)
+      // let message = requestUtilFunc.getErrorMessage(response.data.message)
+      // requestUtilFunc.showToast(message)
     }
     return response
   }
