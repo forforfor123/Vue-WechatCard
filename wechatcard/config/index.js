@@ -28,8 +28,8 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {//Set http proxy
-      '/card/query/publicList': {
-        target: 'http://www.hywmp.cn/api',
+      '/api': {
+        target: 'http://www.hywmp.cn',
         changeOrigin: true
       }
     },

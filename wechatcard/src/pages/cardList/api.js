@@ -1,3 +1,3 @@
 export default {
-  fetchCardList: '/card/query/publicList'
+  fetchcardLists: 'api/card/query/publicList'
 }

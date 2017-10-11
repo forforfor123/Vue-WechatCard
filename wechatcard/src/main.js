@@ -34,10 +34,11 @@ let i18n = new VueI18n({
   }
 })
 
-Vue.http.options.root = 'http://www.hywmp.cn/api'
+Vue.http.options.root = 'http://www.hywmp.cn/'
 Vue.http.options.xhr = { withCredentials: true }
 Vue.http.interceptors.push({
   request: function (request) {
+    console.log(request)
     return request
   },
   response: function (response) {

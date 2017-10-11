@@ -1,17 +1,11 @@
 <template>
-  <div class="cardLists container">
-    <div class="cards-list weui-cells" v-for="cardItem in cardLists" track-by="$index">
-      <a :href="cardItem.link">
-        <div class="weui-cell">
-          <div class="weui-cell__hd">
-            <img class="cell-img" :src="cardItem.picture">
-          </div>
-          <div class="weui-cell__bd">
-            <p v-text="cardItem.name"></p>
-          </div>
-          <div class="weui-cell__ft" v-text="cardItem.phone"></div>
-        </div>
-      </a>
+  <div class="container">
+    <div class="weui-cells cards-list">
+      <router-link class="weui-cell card-cell-link" v-for="(cardItem, key, index) in cardLists" :to="{ name: 'cardDetail', params: { cardId: cardItem.id, openId: currentUser } }">
+        <div class="weui-cell__hd cell-avatar"><img :src="cardItem.picture"></div>
+        <div class="weui-cell__bd cell-name" v-text="cardItem.name"></div>
+        <div class="weui-cell__ft cell-phone" v-text="cardItem.phone"></div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -19,17 +13,15 @@
 <script>
 import API_PATH from './api'
 
-const formatList = (cardLists) => {
-  for (const item of cardLists) {
-  }
-}
-
 const fetchcardLists = (vm) => {
   const query = vm.query
   const resource = vm.$resource(API_PATH.fetchcardLists)
 
   resource.get({ 'openId': query.openId }).then((resp) => {
-    vm.cardLists = formatList(resp.data)
+    const data = resp.data
+    if (data && data.length > 0) {
+      vm.cardLists = data
+    }
   })
 }
 
@@ -75,11 +67,12 @@ export default {
     this.query = this.$route.query
 
     return {
-      cardLists: []
+      cardLists: [],
+      currentUser: this.query.openId
     }
   },
   mounted () {
-    document.title = this.$t('cardLists.pageTitle')
+    // document.title = this.$t('cardLists.pageTitle')
 
     if (!this.query.openId) {
       this.$router.push({
@@ -88,16 +81,36 @@ export default {
     } else {
       fetchcardLists(this)
     }
+  },
+  methods: {
+    viewCardDetail (params) {
+      console.log(params)
+    }
   }
 }
 </script>
 
 <style lang="less">
-.cardLists {
-  background-color: #DDDDDD;
+@import './../../styles/variables.less';
+@import './../../styles/mixins.less';
 
-  h1 {
-    font-style: italic;
+.container {
+  background-color: @white;
+
+  .cards-list {
+    margin: 0;
+
+    .card-cell-link {
+      color: initial;
+    }
+
+    .cell-avatar {
+      img {
+        display: block;
+        .size(20px, 20px);
+        margin-right: 5px;
+      }
+    }
   }
 }
 </style>

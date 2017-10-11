@@ -1,6 +1,9 @@
 export const zhMessage = {
-  cardList: {
+  cardLists: {
     pageTitle: '人脉名片库'
+  },
+  cardDetail: {
+    pageTitle: '名片详情'
   },
   createCard: {
     pageTitle: '创建名片',

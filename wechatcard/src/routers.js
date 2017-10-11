@@ -21,6 +21,11 @@ const routers = [
     component: registerComponent('createCard')
   },
   {
+    path: '/cardDetail',
+    name: 'cardDetail',
+    component: registerComponent('cardDetail')
+  },
+  {
     path: '/error',
     name: 'error',
     component: registerComponent('error')
