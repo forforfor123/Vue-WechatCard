@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="page-card-list container">
     <div class="weui-cells cards-list">
       <router-link class="weui-cell card-cell-link" v-for="(cardItem, key, index) in cardLists" :to="{ name: 'cardDetail', params: { cardId: cardItem.id, openId: currentUser } }">
         <div class="weui-cell__hd cell-avatar"><img :src="cardItem.picture"></div>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import API_PATH from './api'
+import API_PATH from './requestConfig'
 
 const fetchcardLists = (vm) => {
   const query = vm.query
@@ -72,7 +72,7 @@ export default {
     }
   },
   mounted () {
-    // document.title = this.$t('cardLists.pageTitle')
+    document.title = this.$t('cardLists.pageTitle')
 
     if (!this.query.openId) {
       this.$router.push({

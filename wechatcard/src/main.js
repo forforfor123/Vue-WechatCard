@@ -6,7 +6,8 @@ import VueAsyncData from 'vue-async-data'
 import VueI18n from 'vue-i18n'
 import App from './App'
 import routerConfig from './routers'
-// import requestUtilFunc from './utils/request'
+// import httpUtil from './utils/http'
+// import interactionUtil from './utils/interaction'
 import { zhMessage } from './langs/zh_cn'
 import { enMessage } from './langs/en_us'
 
@@ -45,8 +46,8 @@ Vue.http.interceptors.push({
     const status = response.status
     if (status !== 200) {
       console.log(response)
-      // let message = requestUtilFunc.getErrorMessage(response.data.message)
-      // requestUtilFunc.showToast(message)
+      // let message = httpUtil.getHttpErrorResponseMessage(response.data.message)
+      // interactionUtil.showToast(message)
     }
     return response
   }

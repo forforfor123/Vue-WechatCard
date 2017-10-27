@@ -1,5 +1,5 @@
 <template>
-  <div class="createCard container">
+  <div class="page-create-card container">
     <!-- <h1>{{ msg }}</h1> -->
     <btn type="solid" :text="$t('createCard.createCard')" :click-handler="saveCard"></btn>
   </div>
@@ -17,7 +17,7 @@ export default {
     }
   },
   mounted () {
-    // document.title = this.$t('createCard.pageTitle')
+    document.title = this.$t('createCard.pageTitle')
   },
   methods: {
     saveCard () {

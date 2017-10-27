@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="page-card-detail container">
     DETAIL
   </div>
 </template>

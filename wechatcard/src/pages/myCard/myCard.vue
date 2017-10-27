@@ -1,5 +1,5 @@
 <template>
-  <div class="myCard container">
+  <div class="page-my-card container">
     <h1>{{ msg }}</h1>
   </div>
 </template>

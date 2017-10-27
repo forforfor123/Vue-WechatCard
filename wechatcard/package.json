@@ -2,7 +2,7 @@
   "name": "wechatcard",
   "version": "1.0.0",
   "description": "WechatCard with Vue2.0",
-  "author": "justinyang <justinyang@augmentum.com.cn>",
+  "author": "YangZheng <ymimi1993@hotmail.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

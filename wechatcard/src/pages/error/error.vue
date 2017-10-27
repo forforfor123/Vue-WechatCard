@@ -1,5 +1,5 @@
 <template>
-  <div class="error container">
+  <div class="page-error container">
     <h1>{{ msg }}</h1>
   </div>
 </template>
